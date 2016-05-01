@@ -16,27 +16,12 @@
     "api"
   ],
   "author": "zdw1224@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "^4.1.6",
-    "co-mocha": "^1.1.2",
-    "eslint": "^1.10.3",
-    "mocha": "^2.0.1",
-    "muk": "^0.4.0",
-    "rewire": "^2.5.1"
   },
   "dependencies": {
     "koa": "^1.1.0",
     "co": "^4.6.0",
-    "co-fs": "~1.2.0",
-    "ejs": "~1.0.0",
-    "js-to-java": "^2.3.0",
-    "kcors": "^1.1.0",
-    "koa-ejs": "^2.0.1",
-    "koa-router": "^5.2.3",
-    "lodash": "^3.10.1",
-    "moment": "^2.11.2",
-    "node-uuid": "^1.4.7",
     "request": "^2.69.0",
     "rootpath": "^0.1.2"
   }
