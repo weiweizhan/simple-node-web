@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 const router = require('koa-router')();
-const fileutils = require('util/fileutils');
+const fileUtils = require('util/fileutils');
 
 const OPTION_DEFAULT = {
     actionDir: 'action',
@@ -23,7 +23,7 @@ const DEFAULT_METHODS = ['get', 'post'];
 function init() {
     let options = OPTION_DEFAULT;
     let actionDir = path.resolve(__dirname, options.actionDir);
-    let files = fileutils.getAllFiles(actionDir) || [];
+    let files = fileUtils.getAllFiles(actionDir) || [];
     let fileConfig;
     let methods;
     let action;
