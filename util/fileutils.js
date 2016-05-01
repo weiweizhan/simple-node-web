@@ -2,15 +2,6 @@
 
 const fs = require('fs');
 
-function isArrayEmpty(arr) {
-    return !(arr && arr.length && arr.length > 0);
-}
-
-/**
- * get all files under root file
- * @param  {string} root [root file string]
- * @return {array}      [filepath array]
- */
 function getAllFiles(root) {
     let res = [];
     let files = fs.readdirSync(root);
@@ -30,6 +21,5 @@ function getAllFiles(root) {
 }
 
 module.exports = {
-    isArrayEmpty,
     getAllFiles
 };
