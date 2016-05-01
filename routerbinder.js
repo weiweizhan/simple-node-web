@@ -18,11 +18,10 @@ const DEFAULT_METHODS = ['get', 'post'];
 /**
  * api地址路由绑定工具类的初始化方法
  *
- * @param  {Object} options 初始化配置对象,配置对象的字段可以参考 OPTION_DEFAULT
  * @return {GeneratorFunction} 迭代器函数,方便app.use进行中间件注册
  */
-function init(options) {
-    options = _.extend({}, OPTION_DEFAULT, options);
+function init() {
+    let options = OPTION_DEFAULT;
     let actionDir = path.resolve(__dirname, options.actionDir);
     let files = util.getAllFiles(actionDir) || [];
     let fileConfig;

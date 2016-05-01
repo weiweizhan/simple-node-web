@@ -1,7 +1,12 @@
 'use strict';
 
+require('rootpath')();
+const testservice = require('service/testservice');
+
 function* action(next) {
-    this.body = "this is a test api";
+    let name = yield testservice.loadTest();
+
+    this.body = name;
 }
 
 module.exports = {
