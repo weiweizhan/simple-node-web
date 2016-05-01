@@ -21,8 +21,10 @@
   },
   "dependencies": {
     "koa": "^1.1.0",
+    "koa-router": "^5.2.3",
     "co": "^4.6.0",
     "request": "^2.69.0",
-    "rootpath": "^0.1.2"
+    "rootpath": "^0.1.2",
+    "lodash": "^3.10.1"
   }
 }
