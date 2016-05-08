@@ -17,7 +17,7 @@ function *load(sql) {
             if (err) {
                 reject(err);
             }
-            resolve(rows ? rows[0] : undefined);
+            resolve(rows ? rows[0] : new Object());
         })
     });
 }

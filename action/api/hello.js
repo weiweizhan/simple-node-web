@@ -4,9 +4,7 @@ require('rootpath')();
 const testservice = require('service/testservice');
 
 function* action(next) {
-    let name = yield testservice.loadTest();
-
-    this.body = name;
+    this.body = yield testservice.loadTest();
 }
 
 module.exports = {
