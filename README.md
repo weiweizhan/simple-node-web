@@ -6,3 +6,13 @@
 2. 执行```node app.js```启动服务器。
 3. 访问<http://localhost:3000>即可。
 
+### 环境配置
+在本地/data/env/appenv配置环境,使用json字符串,默认为qa环境.
+环境参数appenv,测试qa,线上product.
+示例:
+```
+{
+	"appenv":"product"
+}
+```
+
