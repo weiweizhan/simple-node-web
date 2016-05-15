@@ -1,11 +1,7 @@
 'use strict';
 
-require('rootpath')();
-
 function* action(next) {
     let body = '<html><body>测试</body></html>';
-
-
     this.body = body;
 }
 
