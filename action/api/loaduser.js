@@ -6,6 +6,10 @@ const userService = require('service/userservice');
 function* action(next) {
     let userId = this.query.id;
 
+    if (!userId) {
+        throw 'userId should greater than 0';
+    }
+
     let user = yield userService.loadUser(userId);
     if (!user) {
         this.body = 'user not exist';

@@ -9,8 +9,8 @@ const router = require('koa-router')();
 const fileUtils = require('util/fileutils');
 
 const OPTION_DEFAULT = {
-    actionDir: 'action',
-    apilistPath: 'api.json'
+    actionDir: '../action',
+    apilistPath: '../api.json'
 };
 
 const DEFAULT_METHODS = ['get', 'post'];
