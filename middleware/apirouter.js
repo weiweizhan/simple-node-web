@@ -8,15 +8,14 @@ const suffix2Format = {
 };
 
 /**
- * 返回json格式数据
- * @param data
+ * format data to json
  */
 function jsonFormat(data) {
     return JSON.stringify(data);
 }
 
 /**
- * 返回jsonp格式数据
+ * format data to jsonp
  */
 function jsonpFormat(data, app) {
     let callbackValue = app.query["callback"];
@@ -24,10 +23,7 @@ function jsonpFormat(data, app) {
 }
 
 /**
- * 根据后缀决定渲染数据，其中：
- * 1、suffix : URL请求的后缀
- * 2、data : api的执行结果
- * 3、app : koa
+ * render data by the suffix of api
  */
 function response(suffix, data, app) {
     if (!suffix2Format[suffix]) {
@@ -36,9 +32,6 @@ function response(suffix, data, app) {
     return suffix2Format[suffix](data, app);
 }
 
-/**
- * 判断是否有后缀
- */
 function hasSuffix(context){
     return (context && context.params && context.params.suffix);
 }

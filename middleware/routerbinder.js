@@ -16,9 +16,8 @@ const OPTION_DEFAULT = {
 const DEFAULT_METHODS = ['get', 'post'];
 
 /**
- * api地址路由绑定工具类的初始化方法
- *
- * @return {GeneratorFunction} 迭代器函数,方便app.use进行中间件注册
+ * bind api to router
+ * @return {GeneratorFunction} to register by app.use
  */
 function init() {
     let options = OPTION_DEFAULT;
@@ -52,10 +51,9 @@ function init() {
 }
 
 /**
- * 将api清单缓存到文件中
- *
- * @param  {Object} api2Config - api名称到api配置信息的映射对象
- * @param  {String} relativePath - 文件的相对路径
+ * save api list to file
+ * @param  {Object} api2Config - map of api to config of api
+ * @param  {String} relativePath - file path
  */
 function writeApiList(api2Config, relativePath) {
     if (!(api2Config && relativePath)) {
