@@ -1,14 +1,14 @@
 'use strict';
 
 require('rootpath')();
+const assert = require('middleware/error/assert');
+const errors = require('errors').errors;
 const userService = require('service/userservice');
 
 function* action(next) {
     let userId = this.query.id;
 
-    if (!userId) {
-        throw 'userId should greater than 0';
-    }
+    assert.isTrue(userId > 0, errors.IL_LOAD_USER_INVALID_USER_ID);
 
     let user = yield userService.loadUser(userId);
     if (!user) {

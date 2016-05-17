@@ -1,6 +1,8 @@
 'use strict';
 
 require('rootpath')();
+const ApplicationError = require('./error/error').ApplicationError;
+
 
 const suffix2Format = {
     'json' : jsonFormat,
@@ -58,6 +60,15 @@ module.exports = function *(next) {
         }
         let params = this.params;
         if (!(params && params.suffix)) return;
+
+        if (e instanceof ApplicationError) {
+            this.body = response(params.suffix, {
+                code: e.errorCode,
+                msg: e.message
+            }, this);
+            return;
+        }
+
         this.body = response(params.suffix, {
             code : 500,
             msg : e
