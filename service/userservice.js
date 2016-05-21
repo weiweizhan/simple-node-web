@@ -11,6 +11,16 @@ function* loadUser(userId) {
     return yield userDao.loadUser(userId);
 }
 
+function* addUser(name, phoneNo) {
+    return yield userDao.addUser(name, phoneNo);
+}
+
+function* updateUserName(id, name) {
+    return yield userDao.updateUserName(id, name);
+}
+
 module.exports = {
-    loadUser
+    loadUser,
+    addUser,
+    updateUserName
 };
