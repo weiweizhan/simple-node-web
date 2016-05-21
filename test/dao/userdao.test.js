@@ -2,6 +2,7 @@
 
 require('rootpath')();
 const co = require('co');
+const assert = require('assert');
 const userDao = require('dao/userdao');
 
 describe('userdao', function(){
@@ -13,9 +14,9 @@ describe('userdao', function(){
         it('loadUser', function (done) {
             co(function *(){
                 let actual = yield userDao.loadUser(1);
+                assert(actual);
                 done();
             })
         });
     });
-
-})
+});
